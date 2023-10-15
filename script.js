@@ -20,11 +20,29 @@ let score = 0;// score variable for storing the points
 
 let snake = [
     {x:unit_Size*4 , y:0},
-    {x:unit_Size*3 , y:0}
+    {x:unit_Size*3 , y:0},
     {x:unit_Size*2 , y:0},
     {x:unit_Size , y:0},
     {x : 0, y:0}
 ]
+
+
+window.addEventListener("keydown",change_Direction);
+reset_Btn.addEventListener("click" , reset_Game);
+
+game_Start();
+
+function game_Start(){};
+function next_Sec(){};
+function clear_Board(){};
+function create_Food(){};
+function draw_Food(){};
+function move_Snake(){};
+function change_Direction(){};
+function check_GameOver(){};
+function display_GameOver(){};
+function reset_Game(){};
+
 
 
 
