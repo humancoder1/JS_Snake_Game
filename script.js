@@ -3,8 +3,14 @@ const contx = game_Board.getContext("2d");
 const score_Text = document.querySelector("#score");
 const reset_Btn = document.querySelector("#reset-btn");
 const game_Board_width = game_Board.clientWidth;
+
+console.log(game_Board_width);
+
 const game_Board_height = game_Board.clientHeight;
-const game_Board_color = "aqua";
+
+console.log(game_Board_height);
+
+const game_Board_color = "white";
 const snake_Color = "lightgreen";
 const snake_Border = "black";
 const food_Color = "red";
@@ -32,21 +38,36 @@ reset_Btn.addEventListener("click" , reset_Game);
 
 game_Start();
 create_Food();
+draw_Food();
 
 function game_Start(){};
-function next_Sec(){};
+function next_Sec(){
+
+    if(run){
+        setTimeout(()=>{
+            clear_Board();
+            draw
+        })
+    }
+
+};
 function clear_Board(){};
 function create_Food(){
     function food_position(min , max){
         const rand_num = Math.round((Math.random() * (max - min) + min)/unit_Size) * unit_Size;
         return rand_num;
     }
-    var food_X = food_position(0 , game_Board_width - unit_Size);
+    food_X = food_position(0 , game_Board_width - unit_Size);
+    food_Y = food_position(0 , game_Board_width - unit_Size);
     console.log(food_X);
     
 };
 
-function draw_Food(){};
+function draw_Food(){
+    contx.fillStyle = food_Color;
+    contx.fillRect(food_X , food_Y , unit_Size , unit_Size);
+
+};
 function move_Snake(){};
 function change_Direction(){};
 function check_GameOver(){};
